@@ -1,1 +1,1 @@
-Landing site
+Landing page
