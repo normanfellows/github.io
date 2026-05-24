@@ -1,0 +1,200 @@
+    :root {
+      --border: #d9d9d9;
+      --text: #111;
+      --muted: #555;
+      --link: #1a36d8;
+      --bg: #ffffff;
+      --panel-bg: #ffffff;
+      --soft: #f7f7f7;
+      --shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Outer page frame */
+    .frame {
+      max-width: 1440px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      padding: 16px;
+      background: #fff;
+    }
+
+    /* Optional page header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin: 0 0 18px 0;
+      padding: 0 4px 6px 4px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .page-header .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Two-column pair layout */
+    .pair-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* Individual nested box */
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--panel-bg);
+      padding: 16px;
+      min-height: 760px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .panel-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Image block */
+    .image-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: var(--soft);
+      border: 1px solid #ececec;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Notes block under image */
+    .notes {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .notes p {
+      margin: 0 0 10px 0;
+    }
+
+    .notes .bullet {
+      margin-right: 0.25em;
+    }
+
+    /* Buttonlink style, kept as a reusable class */
+    .buttonlink {
+      display: inline-block;
+      padding: 0.35em 0.7em;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--link);
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 1;
+      vertical-align: middle;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+    }
+
+    .buttonlink:hover {
+      background: #f4f6ff;
+      border-color: #bfc9ff;
+      text-decoration: none;
+    }
+
+    .buttonlink:active {
+      transform: translateY(1px);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    /* Bottom callout */
+    .callout {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .small {
+      font-size: 14px;
+      color: #222;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Optional section separators if you later stack multiple pairs */
+    .pair-block + .pair-block {
+      margin-top: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      body {
+        padding: 12px;
+      }
+
+      .frame {
+        padding: 12px;
+      }
+
+      .pair-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        min-height: auto;
+      }
+
+      .notes {
+        font-size: 17px;
+      }
+    }
